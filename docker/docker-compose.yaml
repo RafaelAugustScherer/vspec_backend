@@ -1,0 +1,15 @@
+name: vspec_backend
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: ./docker/api/Dockerfile
+    restart: always
+
+  mongodb:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
